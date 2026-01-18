@@ -1,4 +1,4 @@
-package StepsDefinations;
+package StepDefinations;
 
 import java.time.Duration;
 
@@ -40,7 +40,7 @@ public class LoginSteps {
 
 	@When("^User enters (.*) and (.*)")
 	public void user_enters_admin_and_admin123(String username, String password) throws InterruptedException {
-	    // Write code here that turns the phrase above into concrete actions
+	    // Write code here that tWurns the phrase above into concrete actions
 		//wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username"))).sendKeys(username);
 	    //driver.findElement(By.name("username")).sendKeys(username);
