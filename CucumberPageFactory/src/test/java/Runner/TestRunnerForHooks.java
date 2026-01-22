@@ -11,12 +11,12 @@ import org.junit.platform.suite.api.Suite;
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "HooksSteps")
 
 /* -------- HTML/JSON REPORT -------- */
-/*
- * @ConfigurationParameter( key = PLUGIN_PROPERTY_NAME, value =
- * "pretty, html:target/HTMLReports/cucumber-report.html, " +
- * "json:target/JSONReports/cucumber.json, junit:target/JUnitReports/reports-junit.xml"
- * )
- */
+
+  @ConfigurationParameter( key = PLUGIN_PROPERTY_NAME, value =
+  "pretty, html:target/HTMLReports/cucumber-report.html, " +
+  "json:target/JSONReports/cucumber.json, junit:target/JUnitReports/reports-junit.xml"
+  )
+ 
 
 /* -------- PARALLEL EXECUTION -------- */
 
