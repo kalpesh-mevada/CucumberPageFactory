@@ -1,7 +1,7 @@
 Feature: Check home page functionality 
 
-Background: user is on logged in
-Given user is on login page
+Background: user logged in
+Given user on login page
 When user enter uname and pswd
 And user click on login link
 Then user should redirect to home page

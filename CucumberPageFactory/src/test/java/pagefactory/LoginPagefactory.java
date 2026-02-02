@@ -14,42 +14,45 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPagefactory {
 	// To maitain same session, need to pass WebDriver same from LoginSteps in constructor
 		
-	
-	@FindBy(name = "username")
+		@FindBy(name = "username")
 	@CacheLookup //locator is not going to change, then you can change.
-	WebElement txt_username;
-	
-	@FindBy(name = "password") 
-	WebElement txt_Password;
-	
-	@FindBy(xpath = "//button[@type='submit']")
-	WebElement btn_login;
-	
-	WebDriver driver;
-	WebDriverWait wait;
-	public LoginPagefactory(WebDriver driver1) {
-		// When object of this class is created, it will initialize all element using initElements method
-		driver = driver1;
-		//wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		AjaxElementLocatorFactory ajaxfactory = new AjaxElementLocatorFactory(driver1, 30); // if working with ajax application use this to avoid error
-		PageFactory.initElements(ajaxfactory, this); //LoginPagefactory.class or following
-		//PageFactory.initElements(new AjaxElementLocatorFactory(driver1, 30), this); //LoginPagefactory.class
-	}
-	
-	public void enterUsername(String username) {
-		/* BEST PRACTICE (Recommended) ➜ Put WAIT inside PageFactory, not in Step file */
-		wait.until(ExpectedConditions.visibilityOf(txt_username)).sendKeys(username);
-		//txt_username.sendKeys(username);
-	}
-	
-	public void enterPassword(String password) {
-		txt_Password.sendKeys(password);
-	}
-	
-	public void clickLogin() {
-		btn_login.click();
-	}
-	
+    WebElement txt_username;
+
+    @FindBy(name = "password")
+    WebElement txt_Password;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    WebElement btn_login;
+
+    WebDriver driver;
+    WebDriverWait wait;
+
+    public LoginPagefactory(WebDriver driver1) {
+    	// When object of this class is created, it will initialize all element using initElements method
+    	//driver = driver1;
+        this.driver = driver1;
+        this.wait = new WebDriverWait(driver1, Duration.ofSeconds(30));
+      //wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        AjaxElementLocatorFactory ajaxfactory =
+                new AjaxElementLocatorFactory(driver1, 30); // if working with ajax application use this to avoid error
+      //PageFactory.initElements(new AjaxElementLocatorFactory(driver1, 30), this); //LoginPagefactory.class
+        PageFactory.initElements(ajaxfactory, this);
+    }
+
+    public void enterUsername(String username) {
+    	/* BEST PRACTICE (Recommended) ➜ Put WAIT inside PageFactory, not in Step file */
+        wait.until(ExpectedConditions.visibilityOf(txt_username))
+            .sendKeys(username);
+      //txt_username.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        txt_Password.sendKeys(password);
+    }
+
+    public void clickLogin() {
+        btn_login.click();
+    }
 	
 	//WebElement txt_logout;
 }

@@ -9,15 +9,15 @@
 	import org.junit.platform.suite.api.Suite;
 	
 	@Suite
-	@SelectClasspathResource("Features/Tags.feature")
+	@SelectClasspathResource("TagsDemo/Tags.feature")
 	@ConfigurationParameter(
 	        key = GLUE_PROPERTY_NAME,
-	        value = "StepDefinations"
+	        value = "TagSteps"
 	)
 	//================Tags========================
 	
 	  @ConfigurationParameter( key = FILTER_TAGS_PROPERTY_NAME, 
-	  value =  "(@smoke or @regression) and @important" )
+	  value =  "(@smoke or @regression) or @important" )
 	/*
 	 * @ConfigurationParameter( key = FILTER_TAGS_PROPERTY_NAME, value =
 	 * "@smoke or @regression" )

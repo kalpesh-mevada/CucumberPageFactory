@@ -7,24 +7,24 @@ import io.cucumber.java.en.When;
 
 public class BackgroundDemoSteps {
 
-	@Given("user is on login page")
-	public void user_is_on_logged_page() {
-		System.out.println("--------user is on login page-----");
+	@Given("user on login page")
+	public void user_on_logged_page() {
+		System.out.println("--------user is on login page (BACKGROUND)-----");
 	}
 
 	@When("user enter uname and pswd")
 	public void user_enter_uname_and_pswd() {
-		System.out.println("user enter uname and pswd-----");
+		System.out.println("user enter uname and pswd (BACKGROUND)-----");
 	}
 
 	@And("user click on login link")
 	public void user_click_on_login_link() {
-		System.out.println("user click on login link-----");
+		System.out.println("user click on login link (BACKGROUND)-----");
 	}
 
 	@Then("user should redirect to home page")
 	public void user_should_redirect_to_home_page() {
-		System.out.println("user should redirect to home page-----");
+		System.out.println("user should redirect to home page (BACKGROUND)-----");
 	}
 
 	@When("user click on Welcome link")

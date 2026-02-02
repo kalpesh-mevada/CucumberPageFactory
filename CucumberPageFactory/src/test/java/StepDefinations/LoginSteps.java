@@ -23,7 +23,7 @@ public class LoginSteps {
 	HomePagefactory homepage;
 	
 	@Given("User opens Chrome browser for parameterization")
-	public void user_opens_chrome_browser_for_parameterization() {
+	public void user_opens_chrome_browser_for_parameterization()  {
 	    // Write code here that turns the phrase above into concrete actions
 		
 		System.out.println("== i am inside login page ==");
